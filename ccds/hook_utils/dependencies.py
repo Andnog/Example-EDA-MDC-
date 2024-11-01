@@ -31,7 +31,7 @@ def write_dependencies(
         with open(dependencies, "w") as f:
             lines = sorted(packages)
 
-            lines += ["" "-e ."]
+            lines += ["" "-e . +"]
 
             f.write("\n".join(lines))
             f.write("\n")
