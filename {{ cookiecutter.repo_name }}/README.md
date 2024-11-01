@@ -1,37 +1,12 @@
-# Cookiecutter Data Science
+# {{cookiecutter.project_name}}
 
-_A logical, reasonably standardized but flexible project structure for doing and sharing data science work._
+<a target="_blank" href="https://cookiecutter-data-science.drivendata.org/">
+    <img src="https://img.shields.io/badge/CCDS-Project%20template-328F97?logo=cookiecutter" />
+</a>
 
-**Cookiecutter Data Science (CCDS)** is a tool for setting up a data science project template that incorporates best practices. To learn more about CCDS's philosophy, visit the [project homepage](https://cookiecutter-data-science.drivendata.org/).
+{{cookiecutter.description}}
 
-> ℹ️ Cookiecutter Data Science v2 has changed from v1. It now requires installing the new cookiecutter-data-science Python package, which extends the functionality of the [cookiecutter](https://cookiecutter.readthedocs.io/en/stable/README.html) templating utility. Use the provided `ccds` command-line program instead of `cookiecutter`.
-
-## Installation
-
-Cookiecutter Data Science v2 requires Python 3.8+. Since this is a cross-project utility application, we recommend installing it with [pipx](https://pypa.github.io/pipx/). Installation command options:
-
-```bash
-# With pipx from PyPI (recommended)
-pipx install cookiecutter-data-science
-
-# With pip from PyPI
-pip install cookiecutter-data-science
-
-# With conda from conda-forge (coming soon)
-# conda install cookiecutter-data-science -c conda-forge
-```
-
-## Starting a new project
-
-To start a new project, run:
-
-```bash
-ccds
-```
-
-### The resulting directory structure
-
-The directory structure of your new project will look something like this (depending on the settings that you choose):
+## Project Organization
 
 ```
 ├── LICENSE            <- Open-source license if one is chosen
@@ -79,31 +54,8 @@ The directory structure of your new project will look something like this (depen
     │   ├── predict.py          <- Code to run model inference with trained models          
     │   └── train.py            <- Code to train models
     │
-    └── plots.py                <- Code to create visualizations   
+    └── plots.py                <- Code to create visualizations
 ```
 
-## Using v1
+--------
 
-If you want to use the old v1 project template, you need to have either the cookiecutter-data-science package or cookiecutter package installed. Then, use either command-line program with the `-c v1` option:
-
-```bash
-ccds https://github.com/drivendataorg/cookiecutter-data-science -c v1
-# or equivalently
-cookiecutter https://github.com/drivendataorg/cookiecutter-data-science -c v1
-```
-
-## Contributing
-
-We welcome contributions! [See the docs for guidelines](https://cookiecutter-data-science.drivendata.org/contributing/).
-
-### Installing development requirements
-
-```bash
-pip install -r dev-requirements.txt
-```
-
-### Running the tests
-
-```bash
-pytest tests
-```
