@@ -4,6 +4,9 @@ packages = [
     "isort",
     "pip",
     "python-dotenv",
+    "numpy",
+    "pandas",
+    "seaborn",
 ]
 
 basic = [
@@ -11,13 +14,7 @@ basic = [
     "jupyterlab",
     "matplotlib",
     "notebook",
-    "numpy",
-    "pandas",
     "scikit-learn",
-    "palmerpenguins",
-    "seaborn",
-    "empiricaldist",
-    "statsmodels",
 ]
 
 scaffold = [
