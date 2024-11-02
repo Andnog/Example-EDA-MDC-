@@ -3,7 +3,7 @@ import sys
 from copy import copy
 from pathlib import Path
 
-root_path = Path(__file__).resolve().parents[1]  # Va dos niveles hacia arriba
+root_path = Path(__file__).resolve().parents[1] 
 sys.path.insert(0, str(root_path))
 
 # https://github.com/cookiecutter/cookiecutter/issues/824
@@ -52,6 +52,8 @@ for docs_template in docs_path.iterdir():
 #
 #  POST-GENERATION FUNCTIONS
 #
+print("Ejecutando write_dependencies")
+print("Paquetes a instalar:", packages)
 write_dependencies(
     "{{ cookiecutter.dependency_file }}",
     packages_to_install,
