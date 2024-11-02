@@ -1,37 +1,101 @@
-# Cookiecutter Data Science
+# project_name
 
-_A logical, reasonably standardized but flexible project structure for doing and sharing data science work._
+# Análisis Exploratorio de Datos del Dataset de Pingüinos
 
-**Cookiecutter Data Science (CCDS)** is a tool for setting up a data science project template that incorporates best practices. To learn more about CCDS's philosophy, visit the [project homepage](https://cookiecutter-data-science.drivendata.org/).
+Este proyecto es un ejemplo de un Análisis Exploratorio de Datos (EDA) realizado sobre el dataset de pingüinos. Se basa en el trabajo realizado en [este proyecto](https://deepnote.com/app/mazzaroli/Analisis-exploratorio-de-datos-caba7762-e435-481e-9060-523263a820b1) y sirve como ejemplo de cómo usar Cookiecutter para estructurar un proyecto de ciencia de datos con información detallada.
 
-> ℹ️ Cookiecutter Data Science v2 has changed from v1. It now requires installing the new cookiecutter-data-science Python package, which extends the functionality of the [cookiecutter](https://cookiecutter.readthedocs.io/en/stable/README.html) templating utility. Use the provided `ccds` command-line program instead of `cookiecutter`.
+## Descripción
 
-## Installation
+El cuaderno de Jupyter incluido en este repositorio realiza un análisis exploratorio completo del dataset de pingüinos, que es una alternativa al famoso dataset de iris. El objetivo es identificar patrones y relaciones entre las variables para entender mejor las características de las diferentes especies de pingüinos.
 
-Cookiecutter Data Science v2 requires Python 3.8+. Since this is a cross-project utility application, we recommend installing it with [pipx](https://pypa.github.io/pipx/). Installation command options:
+Este proyecto también muestra cómo utilizar Cookiecutter para generar una estructura estándar de proyecto, facilitando la organización y escalabilidad del código y los datos.
 
-```bash
-# With pipx from PyPI (recommended)
-pipx install cookiecutter-data-science
+## Contenido del Proyecto
 
-# With pip from PyPI
-pip install cookiecutter-data-science
+- **notebooks/**: Contiene el cuaderno de Jupyter `1.0 EDA.ipynb` con el análisis exploratorio.
+- **data/**: Directorio destinado a almacenar los datos brutos y procesados.
+- **src/**: Código fuente utilizado para el procesamiento y análisis de datos.
+- **requirements.txt**: Lista de dependencias y paquetes necesarios.
+- **README.md**: Este archivo, que proporciona una descripción general del proyecto.
 
-# With conda from conda-forge (coming soon)
-# conda install cookiecutter-data-science -c conda-forge
-```
+## Requisitos Previos
 
-## Starting a new project
+- Python 3.x
+- Jupyter Notebook o JupyterLab
+- Paquetes listados en `requirements.txt`
 
-To start a new project, run:
+## Instalación
 
-```bash
-ccds
-```
+1. **Install cookiecutter**:
 
-### The resulting directory structure
+   ```bash
+   pipx install cookiecutter-data-science # con pipx
+    o
+   pip install cookiecutter-data-science # con pip
+   ```
 
-The directory structure of your new project will look something like this (depending on the settings that you choose):
+1. **Usar el comando de cookiecutter y el repositorio**:
+
+   ```bash
+   ccds https://github.com/Andnog/Example-EDA-MDC-FCD
+   ```
+
+1. **Navegar al directorio del proyecto**:
+
+   ```bash
+   cd tu_proyecto
+   ```
+
+1. **Crear un entorno virtual y activarlo**:
+
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # En Windows usa 'venv\Scripts\activate'
+   ```
+
+1. **Instalar las dependencias**:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+Sigue las celdas del cuaderno para ver el proceso de análisis y visualización de datos.
+
+## Dataset
+
+El dataset de pingüinos proporciona información sobre tres especies diferentes: Adelie, Chinstrap y Gentoo. Incluye características como:
+
+- Longitud y profundidad del pico
+- Longitud de las aletas
+- Masa corporal
+- Sexo
+- Isla de origen
+
+## Estructura Generada con Cookiecutter
+
+Este proyecto utiliza Cookiecutter para crear una estructura estándar, lo que facilita:
+
+- **Organización**: Separación clara entre código, datos y documentación.
+- **Escalabilidad**: Base sólida para ampliar el proyecto en el futuro.
+- **Colaboración**: Facilita que otros contribuyan y entiendan la estructura del proyecto.
+
+Para más información sobre Cookiecutter, visita la [documentación oficial](https://cookiecutter.readthedocs.io/en/latest/).
+
+## Referencias
+
+- Proyecto base: [Análisis exploratorio de datos](https://deepnote.com/app/mazzaroli/Analisis-exploratorio-de-datos-caba7762-e435-481e-9060-523263a820b1)
+- Dataset de pingüinos: Disponible en la librería `seaborn` o en [palmerpenguins](https://github.com/allisonhorst/palmerpenguins)
+- Cookiecutter Data Science: [Repositorio oficial](https://drivendata.github.io/cookiecutter-data-science/)
+
+## Contribuciones
+
+Este proyecto es un ejemplo educativo y no está abierto para contribuciones externas. Sin embargo, eres libre de utilizarlo como referencia o punto de partida para tus propios proyectos.
+
+## Licencia
+
+Este proyecto se distribuye bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
+
+## Project Organization
 
 ```
 ├── LICENSE            <- Open-source license if one is chosen
@@ -52,7 +116,7 @@ The directory structure of your new project will look something like this (depen
 │                         `1.0-jqp-initial-data-exploration`.
 │
 ├── pyproject.toml     <- Project configuration file with package metadata for 
-│                         {{ cookiecutter.module_name }} and configuration for tools like black
+│                         project_name and configuration for tools like black
 │
 ├── references         <- Data dictionaries, manuals, and all other explanatory materials.
 │
@@ -64,9 +128,9 @@ The directory structure of your new project will look something like this (depen
 │
 ├── setup.cfg          <- Configuration file for flake8
 │
-└── {{ cookiecutter.module_name }}   <- Source code for use in this project.
+└── project_name   <- Source code for use in this project.
     │
-    ├── __init__.py             <- Makes {{ cookiecutter.module_name }} a Python module
+    ├── __init__.py             <- Makes project_name a Python module
     │
     ├── config.py               <- Store useful variables and configuration
     │
@@ -79,31 +143,8 @@ The directory structure of your new project will look something like this (depen
     │   ├── predict.py          <- Code to run model inference with trained models          
     │   └── train.py            <- Code to train models
     │
-    └── plots.py                <- Code to create visualizations   
+    └── plots.py                <- Code to create visualizations
 ```
 
-## Using v1
+--------
 
-If you want to use the old v1 project template, you need to have either the cookiecutter-data-science package or cookiecutter package installed. Then, use either command-line program with the `-c v1` option:
-
-```bash
-ccds https://github.com/drivendataorg/cookiecutter-data-science -c v1
-# or equivalently
-cookiecutter https://github.com/drivendataorg/cookiecutter-data-science -c v1
-```
-
-## Contributing
-
-We welcome contributions! [See the docs for guidelines](https://cookiecutter-data-science.drivendata.org/contributing/).
-
-### Installing development requirements
-
-```bash
-pip install -r dev-requirements.txt
-```
-
-### Running the tests
-
-```bash
-pytest tests
-```
