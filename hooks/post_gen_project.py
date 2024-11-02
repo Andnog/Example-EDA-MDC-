@@ -5,6 +5,7 @@ from pathlib import Path
 
 root_path = Path(__file__).resolve().parents[1] 
 sys.path.insert(0, str(root_path))
+print("sys.path:", sys.path)
 
 # https://github.com/cookiecutter/cookiecutter/issues/824
 #   our workaround is to include these utility functions in the CCDS package
