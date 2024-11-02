@@ -3,8 +3,10 @@ import sys
 from copy import copy
 from pathlib import Path
 
-root_path = Path(__file__).resolve().parents[1] 
+root_path = Path(__file__).resolve().parents[1]
+print("root_path:", root_path)
 sys.path.insert(0, str(root_path))
+
 print("sys.path:", sys.path)
 sys_backup = sys.path
 sys.path = [p for p in sys.path if "site-packages" not in p]
