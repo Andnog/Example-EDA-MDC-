@@ -5,7 +5,7 @@ from pathlib import Path
 import os
 
 root_path = Path(os.getcwd())
-ccds_path = root_path / "ccds"
+ccds_path = f'{root_path}\ccds'
 if not ccds_path.exists():
     print(f"El directorio 'ccds' no se encuentra en {root_path}")
 else:
@@ -20,8 +20,8 @@ sys.path = [p for p in sys.path if "site-packages" not in p]
 
 # https://github.com/cookiecutter/cookiecutter/issues/824
 #   our workaround is to include these utility functions in the CCDS package
-from ccds.hook_utils.custom_config import write_custom_config
-from ccds.hook_utils.dependencies import basic, packages, scaffold, write_dependencies
+from dependencies import basic, packages, scaffold, write_dependencies
+from custom_config import write_custom_config
 #
 #  TEMPLATIZED VARIABLES FILLED IN BY COOKIECUTTER
 #
