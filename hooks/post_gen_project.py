@@ -1,12 +1,15 @@
 import shutil
+import sys
 from copy import copy
 from pathlib import Path
+
+root_path = Path(__file__).resolve().parents[1]  # Va dos niveles hacia arriba
+sys.path.insert(0, str(root_path))
 
 # https://github.com/cookiecutter/cookiecutter/issues/824
 #   our workaround is to include these utility functions in the CCDS package
 from ccds.hook_utils.custom_config import write_custom_config
-from ..ccds.hook_utils.dependencies import basic, packages, scaffold, write_dependencies
-
+from ccds.hook_utils.dependencies import basic, packages, scaffold, write_dependencies
 #
 #  TEMPLATIZED VARIABLES FILLED IN BY COOKIECUTTER
 #
