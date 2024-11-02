@@ -6,6 +6,9 @@ from pathlib import Path
 root_path = Path(__file__).resolve().parents[1] 
 sys.path.insert(0, str(root_path))
 print("sys.path:", sys.path)
+sys_backup = sys.path
+sys.path = [p for p in sys.path if "site-packages" not in p]
+
 
 # https://github.com/cookiecutter/cookiecutter/issues/824
 #   our workaround is to include these utility functions in the CCDS package
@@ -67,6 +70,8 @@ write_dependencies(
     module_name="{{ cookiecutter.module_name }}",
     python_version="{{ cookiecutter.python_version_number }}",
 )
+
+sys.path = sys_backup
 
 write_custom_config("{{ cookiecutter.custom_config }}")
 
