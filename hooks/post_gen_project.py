@@ -54,6 +54,10 @@ for docs_template in docs_path.iterdir():
 #
 print("Ejecutando write_dependencies")
 print("Paquetes a instalar:", packages)
+module_name = write_dependencies.__module__
+module_file = sys.modules[module_name].__file__
+print(f"write_dependencies se encuentra en el archivo: {module_file}")
+
 write_dependencies(
     "{{ cookiecutter.dependency_file }}",
     packages_to_install,
