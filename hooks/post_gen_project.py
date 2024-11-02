@@ -4,19 +4,6 @@ from copy import copy
 from pathlib import Path
 import os
 
-root_path = Path(os.getcwd())
-ccds_path = f'{root_path}\ccds'
-if not ccds_path.exists():
-    print(f"El directorio 'ccds' no se encuentra en {root_path}")
-else:
-    print(f"El directorio 'ccds' se encuentra en {ccds_path}")
-print("root_path:", root_path)
-sys.path.insert(0, str(root_path))
-
-print("sys.path:", sys.path)
-sys_backup = sys.path
-sys.path = [p for p in sys.path if "site-packages" not in p]
-
 
 # https://github.com/cookiecutter/cookiecutter/issues/824
 #   our workaround is to include these utility functions in the CCDS package
