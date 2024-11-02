@@ -27,6 +27,8 @@ scaffold = [
 def write_dependencies(
     dependencies, packages, pip_only_packages, repo_name, module_name, python_version
 ):
+    print("Ejecutando write_dependencies")
+    print("Paquetes a instalar:", packages)
     if dependencies == "requirements.txt":
         with open(dependencies+".andrei", "w") as f:
             lines = sorted(packages)
