@@ -1,5 +1,3 @@
-# project_name
-
 # Análisis Exploratorio de Datos del Dataset de Pingüinos
 
 Este proyecto es un ejemplo de un Análisis Exploratorio de Datos (EDA) realizado sobre el dataset de pingüinos. Se basa en el trabajo realizado en [este proyecto](https://deepnote.com/app/mazzaroli/Analisis-exploratorio-de-datos-caba7762-e435-481e-9060-523263a820b1) y sirve como ejemplo de cómo usar Cookiecutter para estructurar un proyecto de ciencia de datos con información detallada.
