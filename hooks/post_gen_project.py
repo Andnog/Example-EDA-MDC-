@@ -7,8 +7,20 @@ import os
 
 # https://github.com/cookiecutter/cookiecutter/issues/824
 #   our workaround is to include these utility functions in the CCDS package
-from dependencies import basic, packages, scaffold, write_dependencies
-from custom_config import write_custom_config
+# Get the path to the template directory from the environment variable
+template_dir = os.environ.get('COOKIECUTTER_TEMPLATE_DIR')
+
+if template_dir:
+    # Add the 'hooks' directory to sys.path
+    hooks_dir = Path(template_dir) / 'hooks'
+    sys.path.insert(0, str(hooks_dir))
+
+    # Now import your modules
+    from dependencies import basic, packages, scaffold, write_dependencies
+    from custom_config import write_custom_config
+else:
+    print("Error: COOKIECUTTER_TEMPLATE_DIR environment variable not set.")
+    sys.exit(1)
 #
 #  TEMPLATIZED VARIABLES FILLED IN BY COOKIECUTTER
 #
