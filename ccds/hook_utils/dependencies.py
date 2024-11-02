@@ -29,8 +29,6 @@ def write_dependencies(
 ):
     if dependencies == "requirements.txt":
         with open(dependencies, "w") as f:
-            missing_packages = ["pandas", "numpy", "seaborn"]
-            packages += [package for package in missing_packages if package not in packages]
             lines = sorted(packages)
 
             lines += ["" "-e ."]

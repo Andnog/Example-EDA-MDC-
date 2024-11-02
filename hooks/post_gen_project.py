@@ -49,6 +49,8 @@ for docs_template in docs_path.iterdir():
 #
 #  POST-GENERATION FUNCTIONS
 #
+missing_packages = ["pandas", "numpy", "seaborn"]
+packages_to_install += [package for package in missing_packages if package not in packages]
 write_dependencies(
     "{{ cookiecutter.dependency_file }}",
     packages_to_install,
