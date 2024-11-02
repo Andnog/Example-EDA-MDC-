@@ -2,8 +2,14 @@ import shutil
 import sys
 from copy import copy
 from pathlib import Path
+import os
 
-root_path = Path(__file__).resolve().parents[1]
+root_path = Path(os.getcwd())
+ccds_path = root_path / "ccds"
+if not ccds_path.exists():
+    print(f"El directorio 'ccds' no se encuentra en {root_path}")
+else:
+    print(f"El directorio 'ccds' se encuentra en {ccds_path}")
 print("root_path:", root_path)
 sys.path.insert(0, str(root_path))
 
