@@ -4,9 +4,6 @@ packages = [
     "isort",
     "pip",
     "python-dotenv",
-    "numpy",
-    "pandas",
-    "seaborn",
 ]
 
 basic = [
@@ -14,7 +11,10 @@ basic = [
     "jupyterlab",
     "matplotlib",
     "notebook",
+    "numpy",
+    "pandas",
     "scikit-learn",
+    "seaborn",
 ]
 
 scaffold = [
@@ -27,13 +27,13 @@ scaffold = [
 def write_dependencies(
     dependencies, packages, pip_only_packages, repo_name, module_name, python_version
 ):
-    print("Ejecutando write_dependencies")
-    print("Paquetes a instalar:", packages)
     if dependencies == "requirements.txt":
-        with open(dependencies+".andrei", "w") as f:
+        with open(dependencies, "w") as f:
+            missing_packages = ["pandas", "numpy", "seaborn"]
+            packages += [package for package in missing_packages if package not in packages]
             lines = sorted(packages)
 
-            lines += ["" "-e . +"]
+            lines += ["" "-e ."]
 
             f.write("\n".join(lines))
             f.write("\n")
